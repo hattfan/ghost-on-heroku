@@ -10,7 +10,6 @@
   "private": true,
   "version": "3.2.0",
   "dependencies": {
-    "angen": "github:hattfan/angentanke",
     "attila": "github:zutrinken/attila#1.13.0",
     "bleak": "github:zutrinken/bleak#1.4.0",
     "casper": "github:tryghost/Casper#3.0.4",
