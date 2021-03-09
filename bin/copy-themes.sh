@@ -1,4 +1,5 @@
 themes=(
+	angen
 	casper
 	attila
 	london
