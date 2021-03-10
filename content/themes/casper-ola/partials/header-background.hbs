@@ -42,7 +42,7 @@ with a `no-image` class so we can style it accordingly.
 
 {{else}} --}}
 <style>
-    .background-olas{
+    .site-header-background{
         background-image: url('assets/top_layer_full.svg');
         background-size: cover;
         min-height: 400px;
@@ -52,7 +52,7 @@ with a `no-image` class so we can style it accordingly.
     }
 
     @media (max-width: 600px) {
-    .background-olas{
+    .site-header-background{
         background-image: url('assets/top_layer_mobile.svg');
         background-size: cover;
         min-height: 300px;
@@ -62,6 +62,6 @@ with a `no-image` class so we can style it accordingly.
     }
 }
 </style>
-<div class="background-olas">
+<div class="outer site-header-background">
 
 {{!-- {{/if}} --}}
