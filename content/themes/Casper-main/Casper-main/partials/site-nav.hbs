@@ -7,9 +7,12 @@
                 <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
             {{/if}}
             <div class="site-nav-content">
-                {{#if @site.navigation}}
+                <ul class="nav" role="menu">
+                    <li class="nav-hem nav-current" role="menuitem"><a href="https://angen-test.herokuapp.com/">Texter</a></li>
+                </ul>
+                {{!-- {{#if @site.navigation}}
                     {{navigation}}
-                {{/if}}
+                {{/if}} --}}
                 {{#is "post"}}
                     <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
                 {{/is}}
