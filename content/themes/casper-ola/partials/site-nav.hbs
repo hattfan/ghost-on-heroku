@@ -7,8 +7,8 @@
         {{/if}}
         <div class="site-nav-content">
                 <ul class="nav" role="menu">
-                    <li class="nav-hem nav-current" role="menuitem" style="float: left;"><a href="#site-main">Texter</a></li>
-                    <li class="nav-hem nav-current" role="menuitem" style="float: right;"><a href="#about">Om</a></li>
+                    <li class="nav-hem nav-current" role="menuitem" style="float: left;"><a href="/#site-main">Texter</a></li>
+                    <li class="nav-hem nav-current" role="menuitem" style="float: right;"><a href="/#about">Om</a></li>
                 </ul>
             {{#is "post"}}
                 <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
@@ -23,6 +23,6 @@
             {{#if @site.twitter}}
                 <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             {{/if}} --}}
-            <a href="https://www.instagram.com/angen_tanke/" target="_blank" rel="noopener"><img src="assets/instagram.svg" style="height: 21px;"></a>        </div>
+            <a href="https://www.instagram.com/angen_tanke/" target="_blank" rel="noopener"><img src="/assets/instagram.svg" style="height: 21px;"></a>        </div>
     </div>
 </nav>
