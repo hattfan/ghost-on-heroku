@@ -94,11 +94,6 @@ into the {body} of the default.hbs template --}}
   margin: 0;
 }
 
-.arrow-divider {
-  background-color: #9c72f7;
-  height: 25vh;
-}
-
 </style>
 <header class="site-home-header" id="title">
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
@@ -111,11 +106,8 @@ into the {body} of the default.hbs template --}}
     </div>
 </header>
 <div class="arrow-container">
-  <a href="/#description">
-    <div class="arrow"></div>
-  </a>
+    <div class="arrow" onclick="downScroll()"></div>
 </div>
-<div class="arrow-divider"></div>
 <div class="description">
     Ängen vill förena de djupare diskurserna med de vardagsnära samtalen om hållbarhet. Samtidsdebatten kring hållbarhetsfrågan rör sig sällan i djupled, utan fastnar på ytan vid detaljer om skatteväxlingar och elbilar. Vi vill skapa en inkluderande samtals-och tankeplats som visar hur viktigt konst och litteratur är för att möjliggöra det akuta behovet av förändring som vår samhällsmodell står inför. Och samtidigt diskutera hur djupet relaterar till ytan.
 </div>
@@ -223,5 +215,10 @@ into the {body} of the default.hbs template --}}
         update();
 
     });
+
+    function downScroll(){
+        var y = $(window).scrollTop();  //your current y position on the page
+        $(window).scrollTop(y+150);
+    }
 </script>
 {{/contentFor}}
