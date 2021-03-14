@@ -70,7 +70,28 @@ into the {body} of the default.hbs template --}}
     margin: 0;
 }
 
+.arrow {
+  box-sizing: border-box;
+  height: 14px;
+  width: 14px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+}
 
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9c72f7;
+  height: 100vh;
+}
 
 
 </style>
@@ -104,6 +125,12 @@ into the {body} of the default.hbs template --}}
 
     </div>
 </main>
+<div class="arrow-container">
+  <a href="/#about">
+    <div class="arrow"></div>
+  </a>
+</div>
+
 <div class="section-divider-second"></div>
 <div class="about" id="about">
     TANKEPLATSEN ÄNGEN är uppkallad efter en av 1900-talets mest inflytelserika miljötänkare, Donella Meadows. Hon fick sitt genombrott med publikationen The Limits to Growth 
