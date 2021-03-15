@@ -143,9 +143,9 @@ into the {body} of the default.hbs template --}}
 
         <div class="post-feed">
             {{#get "posts" limit="3"}}
-            {{#foreach posts}}
-            {{> "post-card"}}
-            {{/foreach}}
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
             {{/get}}
         </div>
 
@@ -160,14 +160,7 @@ into the {body} of the default.hbs template --}}
                 text-decoration: none;">
             Läs alla artiklar!</a>
         </div>
-        {{!-- <div class="post-feed">
-            {{#foreach posts}}
 
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
-
-            {{/foreach}}
-        </div> --}}
 
     </div>
 </main>
