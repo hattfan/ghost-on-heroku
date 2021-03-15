@@ -141,6 +141,14 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
+        <div class="test">
+            {{#get "posts" limit="3"}}
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
         <div class="post-feed">
             {{#foreach posts}}
 
