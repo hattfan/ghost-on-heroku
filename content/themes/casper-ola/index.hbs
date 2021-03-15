@@ -98,6 +98,10 @@ into the {body} of the default.hbs template --}}
         border-right-width: 4px;
     }
 
+    .arrow-container {
+        display: none;
+    }
+
     @media (max-width: 600px) {
         .arrow-container {
             display: flex;
@@ -243,7 +247,7 @@ into the {body} of the default.hbs template --}}
 
     function downScroll() {
         var objDiv = document.getElementById("description");
-        objDiv.scrollTop = objDiv.scrollHeight;
+        objDiv.scrollIntoView();
     }
 </script>
 {{/contentFor}}
