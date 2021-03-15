@@ -149,10 +149,6 @@ into the {body} of the default.hbs template --}}
 
             {{/foreach}}
         </div>
-        {{#times 10}}
-            <span>{{this}}</span>
-            <span>{{posts[this]}}</span>
-        {{/times}}
 
     </div>
 </main>
@@ -257,13 +253,6 @@ into the {body} of the default.hbs template --}}
 
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
-
-    Handlebars.registerHelper('times', function (n, block) {
-        var accum = '';
-        for (var i = 0; i < n; ++i)
-            accum += block.fn(i);
-        return accum;
-    });
 </script>
 
 {{/contentFor}}
