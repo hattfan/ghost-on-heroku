@@ -141,22 +141,33 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
-        <div class="test">
+        <div class="post-feed">
             {{#get "posts" limit="3"}}
-                {{#foreach posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
+            {{#foreach posts}}
+            {{> "post-card"}}
+            {{/foreach}}
             {{/get}}
         </div>
 
-        <div class="post-feed">
+        <div style="text-align: center;">
+            <a href="#" style="
+                width: 250px;
+                padding: 8px;
+                border: 1px solid #615f5f;
+                background: #9c72f7;
+                color: white;
+                border-radius: 4px;
+                text-decoration: none;">
+            Läs alla artiklar!</a>
+        </div>
+        {{!-- <div class="post-feed">
             {{#foreach posts}}
 
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
             {{> "post-card"}}
 
             {{/foreach}}
-        </div>
+        </div> --}}
 
     </div>
 </main>
