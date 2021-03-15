@@ -246,9 +246,13 @@ into the {body} of the default.hbs template --}}
     });
 
     function downScroll() {
-        var objDiv = document.getElementById("description");
-        objDiv.scrollIntoView();
-        window.scrollBy(0, -50); // Scroll 100px downwards
+        const id = 'description';
+        const yOffset = -70;
+        const element = document.getElementById(id);
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
     }
+
 </script>
 {{/contentFor}}
