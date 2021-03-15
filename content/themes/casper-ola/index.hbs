@@ -248,6 +248,7 @@ into the {body} of the default.hbs template --}}
     function downScroll() {
         var objDiv = document.getElementById("description");
         objDiv.scrollIntoView();
+        window.scrollBy(0, -50); // Scroll 100px downwards
     }
 </script>
 {{/contentFor}}
