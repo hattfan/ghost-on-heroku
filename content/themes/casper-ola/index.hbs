@@ -141,7 +141,13 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
-        
+        <div class="post-feed">
+            {{#get "posts" limit="3"}}
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
 
         <div style="text-align: center;">
             <a href="#" style="
