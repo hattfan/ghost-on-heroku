@@ -262,7 +262,7 @@ into the {body} of the default.hbs template --}}
     }
 
     function showAllArticles(){
-        document.querySelectorAll(".post-card").forEach(postCard => {
+        document.querySelectorAll('.post-card[style*="display: none;"]').forEach(postCard => {
             postCard.style.display = "block";
         })
         document.querySelector("#showAllContainer").style.display = "none";
