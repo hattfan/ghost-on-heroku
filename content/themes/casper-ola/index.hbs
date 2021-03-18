@@ -11,6 +11,10 @@ into the {body} of the default.hbs template --}}
         flex:50%;
     }
 
+    .post-card-large{
+        flex:100%;
+    }
+
     .description {
         background-color: #9c72f7;
         text-align: center;
@@ -31,7 +35,11 @@ into the {body} of the default.hbs template --}}
         line-height: 1.5;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
+
+        .post-card {
+            flex:100%;
+        }
 
         .description,
         .about {
@@ -61,7 +69,7 @@ into the {body} of the default.hbs template --}}
         background-position: center;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         .section-divider-first {
             background-image: url('assets/aboutToText_mobile.svg');
         }
@@ -110,7 +118,7 @@ into the {body} of the default.hbs template --}}
         display: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         .arrow-container {
             display: flex;
             align-items: center;
@@ -156,7 +164,7 @@ into the {body} of the default.hbs template --}}
                 {{/foreach}}
             {{/get}}
 
-            <div style="text-align: center;margin:10px">
+            <div style="text-align: center;margin:0 auto" id="showAllContainer">
                 <button onclick="showAllArticles(this)" style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA ARTIKLAR</button>
             </div>
         </div>
@@ -268,11 +276,11 @@ into the {body} of the default.hbs template --}}
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
 
-    function showAllArticles(e){
+    function showAllArticles(){
         document.querySelectorAll(".post-card").forEach(postCard => {
-            debugger;
-            postCard.style.display = "";
+            postCard.style.display = "block";
         })
+        document.querySelector("#showAllContainer").display = "none";
     }
 
 </script>
