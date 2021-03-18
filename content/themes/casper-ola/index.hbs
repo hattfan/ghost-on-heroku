@@ -142,22 +142,18 @@ into the {body} of the default.hbs template --}}
     <div class="inner posts">
 
         <div class="post-feed">
-            {{#get "posts" limit="3"}}
+            {{#get "posts" }}
                 {{#foreach posts}}
                     {{> "post-card"}}
                 {{/foreach}}
             {{/get}}
+            
             <div style="text-align: center;margin:10px">
-                <a href="#" style="
+                <p style="
                     width: 250px;
                     padding: 8px;
-                    border: 1px solid #615f5f;
-                    background: #9c72f7;
-                    color: white;
-                    border-radius: 4px;
-                    text-decoration: none;
-                    box-shadow: 2px 2px 2px #ccc;">
-                Läs alla artiklar!</a>
+                    color: black;">
+                LÄS ALLA ARTIKLAR</p>
             </div>
         </div>
 
