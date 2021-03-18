@@ -155,7 +155,7 @@ into the {body} of the default.hbs template --}}
 
         </div>
             <div style="text-align: center;margin:0 auto" id="showAllContainer">
-                <button onclick="showAllArticles(this)" style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA ARTIKLAR</button>
+                <button onclick="showAllArticles()" style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA ARTIKLAR</button>
             </div>
     </div>
 </main>
@@ -265,7 +265,7 @@ into the {body} of the default.hbs template --}}
         document.querySelectorAll(".post-card").forEach(postCard => {
             postCard.style.display = "block";
         })
-        document.querySelector("#showAllContainer").display = "none";
+        document.querySelector("#showAllContainer").style.display = "none";
     }
 
 </script>
