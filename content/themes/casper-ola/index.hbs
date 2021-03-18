@@ -7,14 +7,6 @@ into the {body} of the default.hbs template --}}
         display:none;
     }
 
-    .post-card{
-        flex:50%;
-    }
-
-    .post-card-large{
-        flex:100%;
-    }
-
     .description {
         background-color: #9c72f7;
         text-align: center;
@@ -36,10 +28,6 @@ into the {body} of the default.hbs template --}}
     }
 
     @media (max-width: 700px) {
-
-        .post-card {
-            flex:100%;
-        }
 
         .description,
         .about {
@@ -164,14 +152,11 @@ into the {body} of the default.hbs template --}}
                 {{/foreach}}
             {{/get}}
 
+
+        </div>
             <div style="text-align: center;margin:0 auto" id="showAllContainer">
                 <button onclick="showAllArticles(this)" style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA ARTIKLAR</button>
             </div>
-        </div>
-
-        
-
-
     </div>
 </main>
 
