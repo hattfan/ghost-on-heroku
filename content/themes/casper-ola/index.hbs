@@ -3,6 +3,14 @@
 into the {body} of the default.hbs template --}}
 <style>
     /* User added */
+    .post-card:nth-child(n+4){
+        display:none;
+    }
+
+    .post-card{
+        flex:50%;
+    }
+
     .description {
         background-color: #9c72f7;
         text-align: center;
@@ -147,13 +155,9 @@ into the {body} of the default.hbs template --}}
                     {{> "post-card"}}
                 {{/foreach}}
             {{/get}}
-            
+
             <div style="text-align: center;margin:10px">
-                <p style="
-                    width: 250px;
-                    padding: 8px;
-                    color: black;">
-                LÄS ALLA ARTIKLAR</p>
+                <button onclick="showAllArticles(this)" style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA ARTIKLAR</button>
             </div>
         </div>
 
@@ -263,6 +267,14 @@ into the {body} of the default.hbs template --}}
 
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
+
+    function showAllArticles(e){
+        document.querySelectorAll(".post-card").forEach(postCard => {
+            debugger;
+            postCard.style.display = "";
+        })
+    }
+
 </script>
 
 {{/contentFor}}
