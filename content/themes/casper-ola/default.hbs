@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
+
 <head>
 
     {{!-- Document Settings --}}
@@ -21,43 +22,44 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMT48P4NVY"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-TMT48P4NVY');
+        gtag('config', 'G-TMT48P4NVY');
     </script>
 
 </head>
 <style>
-@font-face {
-    font-family: 'texgyreheros';
-    src: url("/assets/texgyreheros-regular-webfont.woff");
-}
-
-.site-nav-main {
-    background-color: #9c72f7;
-}
-
-html {
-  scroll-behavior: smooth;
- }
- 
-.site-nav-main a {
-    text-decoration: none;
-}
-
-body, .post-card-excerpt, .post-content{
-    font-family: 'texgyreheros', Verdana, Helvetica, Sans-Serif !important;
-}
-
-@media (max-width: 600px) {
-    .site-nav-right{
-        display: flex;
-        margin-right: 10px;
+    @font-face {
+        font-family: 'texgyreheros';
+        src: url("/assets/texgyreheros-regular-webfont.woff");
     }
-}
 
+    .site-nav-main {
+        background-color: #9c72f7;
+    }
+
+    {{!-- html {
+        scroll-behavior: smooth;
+    } --}}
+
+    .site-nav-main a {
+        text-decoration: none;
+    }
+
+    body,
+    .post-card-excerpt,
+    .post-content {
+        font-family: 'texgyreheros', Verdana, Helvetica, Sans-Serif !important;
+    }
+
+    @media (max-width: 600px) {
+        .site-nav-right {
+            display: flex;
+            margin-right: 10px;
+        }
+    }
 </style>
 
 <body class="{{body_class}}">
@@ -70,9 +72,11 @@ body, .post-card-excerpt, .post-content{
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+                </section>
                 <nav class="site-footer-nav">
-                    <a href="https://www.instagram.com/angen_tanke/" target="_blank" rel="noopener"><img src="/assets/instagram.svg" style="height: 21px;"></a>
+                    <a href="https://www.instagram.com/angen_tanke/" target="_blank" rel="noopener"><img
+                            src="/assets/instagram.svg" style="height: 21px;"></a>
                 </nav>
             </div>
         </footer>
@@ -90,11 +94,12 @@ body, .post-card-excerpt, .post-content{
         <a class="subscribe-close" href="#"></a>
         <div class="subscribe-overlay-content">
             {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
             <div class="subscribe-form">
                 <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight to your inbox</p>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
                 <form data-members-form="subscribe">
                     <div class="form-group">
                         <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
@@ -117,11 +122,9 @@ body, .post-card-excerpt, .post-content{
     {{/if}}
 
     {{!-- jQuery, required for fitvids --}}
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
     {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
     <script src="{{asset "built/casper.js"}}"></script>
     <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
@@ -152,7 +155,7 @@ body, .post-card-excerpt, .post-content{
             });
 
             // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
+            $('.subscribe-button').click(function () {
                 $('.subscribe-overlay form').removeClass();
                 $('.subscribe-email').val('');
             });
@@ -165,5 +168,35 @@ body, .post-card-excerpt, .post-content{
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
 
+    <script>
+        (function () {
+            scrollTo();
+        })();
+
+        function scrollTo() {
+            const links = document.querySelectorAll('.scroll');
+            links.forEach(each => (each.onclick = scrollAnchors));
+        }
+
+        function scrollAnchors(e, respond = null) {
+            const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+            e.preventDefault();
+            var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+            const targetAnchor = document.querySelector(targetID);
+            if (!targetAnchor) return;
+            const originalTop = distanceToTop(targetAnchor);
+            window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+            const checkIfDone = setInterval(function () {
+                const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+                if (distanceToTop(targetAnchor) === 0 || atBottom) {
+                    targetAnchor.tabIndex = '-1';
+                    targetAnchor.focus();
+                    window.history.pushState('', '', targetID);
+                    clearInterval(checkIfDone);
+                }
+            }, 100);
+        }
+    </script>
 </body>
+
 </html>
