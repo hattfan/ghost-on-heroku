@@ -41,6 +41,7 @@
     }
 
     html {
+        --scroll-behavior: smooth;
         scroll-behavior: smooth;
     }
 
@@ -127,8 +128,8 @@
         </script>
     {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
     <script src="{{asset "built/casper.js"}}"></script>
-    <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
-
+    <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+    <script src="https://unpkg.com/smoothscroll-anchor-polyfill"></script>
     {{!-- Scripts for Members subscription --}}
     <script>
         // Parse the URL parameter
@@ -161,22 +162,7 @@
             });
         });
 
-        jQuery(function ($) {
-            $('a[href*="#"]:not([href="#"])').click(function () {
-                var target = $(this.hash);
-                $('html,body').stop().animate({
-                    scrollTop: target.offset().top - 100
-                }, 1100);
-            });
-            if (location.hash) {
-                var id = $(location.hash);
-            }
-            $(window).load(function () {
-                if (location.hash) {
-                    $('html,body').animate({ scrollTop: id.offset().top - 100 }, 600)
-                };
-            });
-        });
+        
     </script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
