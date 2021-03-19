@@ -40,9 +40,9 @@
         background-color: #9c72f7;
     }
 
-    {{!-- html {
+    html {
         scroll-behavior: smooth;
-    } --}}
+    }
 
     .site-nav-main a {
         text-decoration: none;
@@ -160,6 +160,15 @@
                 $('.subscribe-email').val('');
             });
         });
+
+        $(document).ready(function () {
+            $('a[href*=\\#]').on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 500);
+            });
+        });
     </script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
@@ -169,33 +178,7 @@
     {{ghost_foot}}
 
     <script>
-        (function () {
-            scrollTo();
-        })();
 
-        function scrollTo() {
-            const links = document.querySelectorAll('.scroll');
-            links.forEach(each => (each.onclick = scrollAnchors));
-        }
-
-        function scrollAnchors(e, respond = null) {
-            const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-            e.preventDefault();
-            var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
-            const targetAnchor = document.querySelector(targetID);
-            if (!targetAnchor) return;
-            const originalTop = distanceToTop(targetAnchor);
-            window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
-            const checkIfDone = setInterval(function () {
-                const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-                if (distanceToTop(targetAnchor) === 0 || atBottom) {
-                    targetAnchor.tabIndex = '-1';
-                    targetAnchor.focus();
-                    window.history.pushState('', '', targetID);
-                    clearInterval(checkIfDone);
-                }
-            }, 100);
-        }
     </script>
 </body>
 
