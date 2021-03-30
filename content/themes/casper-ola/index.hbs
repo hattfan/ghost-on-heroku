@@ -3,8 +3,8 @@
 into the {body} of the default.hbs template --}}
 <style>
     /* User added */
-    .post-card:nth-child(n+4){
-        display:none;
+    .post-card:nth-child(n+4) {
+        display: none;
     }
 
     .description {
@@ -147,47 +147,42 @@ into the {body} of the default.hbs template --}}
 
         <div class="post-feed">
             {{#get "posts" }}
-                {{#foreach posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
+            {{#foreach posts}}
+            {{> "post-card"}}
+            {{/foreach}}
             {{/get}}
 
 
         </div>
-            <div style="text-align: center;margin:0 auto" id="showAllContainer">
-                <button onclick="showAllArticles()" style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA TEXTER</button>
-            </div>
+        <div style="text-align: center;margin:0 auto" id="showAllContainer">
+            <button onclick="showAllArticles()"
+                style="color: black; background: none; font-size:2rem;font-weight:600">LÄS ALLA TEXTER</button>
+        </div>
     </div>
 </main>
 
 <div class="section-divider-second" id="about-divider"></div>
 <div class="about" id="about">
+
     TANKEPLATSEN ÄNGEN är uppkallad efter en av 1900-talets mest inflytelserika miljötänkare, Donella Meadows. Hon fick
-    sitt genombrott med publikationen The Limits to Growth
-    1972 och fortsatte sedan sin karriär som författare och miljöjournalist. 1999 publicerade
-    Meadows artikeln Leverage Points: Places to Intervene in a System, vilken skulle komma
-    att bli en av hennes mest kända publikationer. Artikeln redogör för hur man på det mest
-    effektiva sättet skapar största möjliga förändring i ett givet system. Ängen vill vara en förlängning av hennes
-    tänkande och en plats där litteraturen, konsten och vetenskapen vävs
-    samman.
+    sitt genombrott med publikationen The Limits to Growth 1972 och fortsatte sedan sin karriär som författare och
+    miljöjournalist. 1999 publicerade Meadows artikeln Leverage Points: Places to Intervene in a System, vilken skulle
+    komma att bli en av hennes mest kända publikationer. Artikeln redogör för hur man på det mest effektiva sättet
+    skapar största möjliga förändring i ett givet system.
     <br><br>
-    Den dominerande uppfattningen i dagens hållbarhetsdebatt är att vår utmaning handlar
-    om att förena ekonomisk tillväxt med en tillräckligt avtagande miljöbelastning. Det bygger
-    mycket på teknik- och marknadsoptimism – en idé om att problemen springer ur att vi har
-    misslyckats med att fånga in och prissätta naturkapitalet och ekosystemtjänsterna. Andra
-    utvecklingsvägar beskrivs ofta i termer av uppoffringar och nedmonteringar. Den här uppfattningen, närmare bestämt
-    tron på den ekologiska moderniseringen, bidrar i allra högsta
-    grad till en farlig och vilseledande bild av hur vi ska och kan få bukt med den ekologiska
-    krisen. De aktörer som uppmärksammas för ”gott hållbarhetsarbete” idag, är ofta de som
-    anammar just den ekologiska moderniseringens tänkande.
+    Ängen vill vara en plats där litteraturen, konsten och vetenskapen vävs samman. Den dominerande uppfattningen i
+    dagens hållbarhetsdebatt är att vår utmaning handlar om att förena ekonomisk tillväxt med en tillräckligt avtagande
+    miljöbelastning. Det bygger mycket på teknik- och marknadsoptimism – en idé om att problemen springer ur att vi har
+    misslyckats med att fånga in och prissätta naturkapitalet och ekosystemtjänsterna. Andra utvecklingsvägar beskrivs
+    ofta i termer av uppoffringar och nedmonteringar. Den här uppfattningen, närmare bestämt tron på den ekologiska
+    moderniseringen, bidrar i allra högsta grad till en farlig och vilseledande bild av hur vi ska och kan få bukt med
+    den ekologiska krisen. De aktörer som uppmärksammas för ”gott hållbarhetsarbete” idag, är ofta de som anammar just
+    den ekologiska moderniseringens tänkande.
     <br><br>
-    Ängen vill problematisera tanken på den ekologiska moderniseringen som en möjlig och
-    önskvärd lösning. Med utgångspunkt i Meadows systemnivåer vill vi argumentera för varför
-    vi inte kan konsumera oss fram till varken hållbarhet eller lycka. I enlighet med Meadows
-    hävdar vi att språket styr de frihetsgrader som står till förfogande för skapandet av vår
-    framtida samhällskonstruktion. Vi vill diskutera vilka krafter som krävs för att förhindra ekologiska övertramp, och
-    vad kan vi göra för att samtidigt nå fram till nedmonteringens och
-    uppoffrandets motsatser, med andra ord; den välfärd som växer ur våra verkliga behov. Den
+    Ängen vill problematisera tanken på den ekologiska moderniseringen som en möjlig och önskvärd lösning. Vi vill
+    argumentera för varför vi inte kan konsumera oss fram till varken hållbarhet eller lycka. Vi vill diskutera vilka
+    krafter som krävs för att förhindra ekologiska övertramp, och vad kan vi göra för att samtidigt nå fram till
+    nedmonteringens och uppoffrandets motsatser, med andra ord; den välfärd som växer ur våra verkliga behov. Den
     välfärd som tillväxtparadigmet förnekat oss
 </div>
 {{!-- <div class="section-divider-third"></div> --}}
@@ -261,9 +256,9 @@ into the {body} of the default.hbs template --}}
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
 
-    function showAllArticles(){
+    function showAllArticles() {
         document.querySelectorAll('.post-card').forEach(postCard => {
-            if(!postCard.classList.contains('post-card-large')){
+            if (!postCard.classList.contains('post-card-large')) {
                 postCard.style.display = "block";
             }
         })
